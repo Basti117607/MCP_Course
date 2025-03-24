@@ -1,0 +1,703 @@
+<div class="section-header">
+    <div class="section-icon"><i class="fas fa-map"></i></div>
+    <h4>Risikomanagement-Überblick für MCP-Server-Projekte</h4>
+</div>
+
+<p>Die Implementierung von MCP-Servern im Gastgewerbe birgt verschiedene Risiken, die das Projektergebnis beeinflussen können. Diese Übersicht hilft Ihnen, die wichtigsten Risikokategorien zu verstehen und einen systematischen Ansatz zum Umgang mit ihnen zu entwickeln.</p>
+
+<div class="risk-overview-container">
+    <div class="risk-categories">
+        <h5>Die wichtigsten Risikokategorien bei MCP-Server-Projekten</h5>
+        
+        <div class="risk-category-grid">
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="category-content">
+                    <h6>Technische Risiken</h6>
+                    <p>Betreffen die technische Implementierung, Systemintegration und Leistungsfähigkeit des MCP-Servers.</p>
+                    <div class="risk-examples">
+                        <span>Kompatibilitätsprobleme</span>
+                        <span>Datenschutzverletzungen</span>
+                        <span>Systemausfälle</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-users-cog"></i></div>
+                <div class="category-content">
+                    <h6>Organisatorische Risiken</h6>
+                    <p>Betreffen das Projektmanagement, Mitarbeiterakzeptanz und organisatorische Veränderungen.</p>
+                    <div class="risk-examples">
+                        <span>Widerstand der Mitarbeiter</span>
+                        <span>Mangelnde Ressourcen</span>
+                        <span>Unklare Verantwortlichkeiten</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="category-content">
+                    <h6>Finanzielle Risiken</h6>
+                    <p>Betreffen Budget, Kosten, ROI und finanzielle Nachhaltigkeit des MCP-Server-Projekts.</p>
+                    <div class="risk-examples">
+                        <span>Budgetüberschreitungen</span>
+                        <span>Unerwartete Folgekosten</span>
+                        <span>Verzögerter ROI</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-user-friends"></i></div>
+                <div class="category-content">
+                    <h6>Gast- und kundenspezifische Risiken</h6>
+                    <p>Betreffen die Gästeakzeptanz, Kundenerfahrung und Kundenzufriedenheit.</p>
+                    <div class="risk-examples">
+                        <span>Negative Nutzererfahrungen</span>
+                        <span>Imageschäden</span>
+                        <span>Fehlende Personalisierung</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-balance-scale"></i></div>
+                <div class="category-content">
+                    <h6>Rechtliche und regulatorische Risiken</h6>
+                    <p>Betreffen Datenschutz, Compliance, und rechtliche Anforderungen.</p>
+                    <div class="risk-examples">
+                        <span>DSGVO-Verstöße</span>
+                        <span>Fehlende Compliance</span>
+                        <span>Unzureichende Verträge</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-category">
+                <div class="category-icon"><i class="fas fa-industry"></i></div>
+                <div class="category-content">
+                    <h6>Branchenspezifische Risiken</h6>
+                    <p>Betreffen spezifische Herausforderungen im Gastgewerbe.</p>
+                    <div class="risk-examples">
+                        <span>Saisonale Auslastungsschwankungen</span>
+                        <span>Internationale Gästevielfalt</span>
+                        <span>Standortspezifische Anforderungen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="risk-matrix">
+        <h5>Risikomatrix: Bewertung nach Eintrittswahrscheinlichkeit und Auswirkung</h5>
+        
+        <div class="matrix-explanation">
+            <p>Die Risikomatrix hilft Ihnen, Risiken nach ihrer Eintrittswahrscheinlichkeit und potenziellen Auswirkung einzustufen und zu priorisieren:</p>
+        </div>
+        
+        <div class="matrix-container">
+            <div class="matrix-grid">
+                <div class="matrix-header-row">
+                    <div class="matrix-corner">Eintrittswahrscheinlichkeit / Auswirkung</div>
+                    <div class="matrix-header">Gering</div>
+                    <div class="matrix-header">Mittel</div>
+                    <div class="matrix-header">Hoch</div>
+                    <div class="matrix-header">Sehr hoch</div>
+                </div>
+                <div class="matrix-row">
+                    <div class="matrix-row-header">Sehr hoch</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell high">Hohes Risiko</div>
+                    <div class="matrix-cell extreme">Extremes Risiko</div>
+                    <div class="matrix-cell extreme">Extremes Risiko</div>
+                </div>
+                <div class="matrix-row">
+                    <div class="matrix-row-header">Hoch</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell high">Hohes Risiko</div>
+                    <div class="matrix-cell extreme">Extremes Risiko</div>
+                </div>
+                <div class="matrix-row">
+                    <div class="matrix-row-header">Mittel</div>
+                    <div class="matrix-cell low">Geringes Risiko</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell high">Hohes Risiko</div>
+                </div>
+                <div class="matrix-row">
+                    <div class="matrix-row-header">Gering</div>
+                    <div class="matrix-cell low">Geringes Risiko</div>
+                    <div class="matrix-cell low">Geringes Risiko</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                    <div class="matrix-cell medium">Mittleres Risiko</div>
+                </div>
+            </div>
+            
+            <div class="matrix-legend">
+                <div class="legend-item">
+                    <div class="legend-color low"></div>
+                    <div class="legend-text">Geringes Risiko: Überwachen</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium"></div>
+                    <div class="legend-text">Mittleres Risiko: Vorsichtsmaßnahmen treffen</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color high"></div>
+                    <div class="legend-text">Hohes Risiko: Aktiv gegensteuern</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color extreme"></div>
+                    <div class="legend-text">Extremes Risiko: Sofortige Maßnahmen erforderlich</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="risk-management-approach">
+        <h5>Der systematische Risikomanagement-Ansatz</h5>
+        
+        <div class="approach-steps">
+            <div class="approach-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h6>Risikoidentifikation</h6>
+                    <p>Ermittlung potenzieller Risiken durch Brainstorming, Experteninterviews, Checklisten und Erfahrungen aus ähnlichen Projekten.</p>
+                </div>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h6>Risikobewertung</h6>
+                    <p>Bewertung der identifizierten Risiken nach Eintrittswahrscheinlichkeit und Auswirkung mithilfe der Risikomatrix.</p>
+                </div>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h6>Risikopriorisierung</h6>
+                    <p>Priorisierung der Risiken basierend auf ihrer Bewertung, um zu entscheiden, welche Risiken aktiv adressiert werden müssen.</p>
+                </div>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h6>Entwicklung von Gegenmaßnahmen</h6>
+                    <p>Entwicklung von Präventiv- und Reaktionsmaßnahmen für jedes priorisierte Risiko, inklusive der Verantwortlichkeiten und Zeitpläne.</p>
+                </div>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h6>Implementierung und Überwachung</h6>
+                    <p>Umsetzung der festgelegten Maßnahmen und kontinuierliche Überwachung der Risiken und der Wirksamkeit der Gegenmaßnahmen.</p>
+                </div>
+            </div>
+            
+            <div class="approach-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h6>Regelmäßige Überprüfung und Anpassung</h6>
+                    <p>Regelmäßige Neubewertung der Risikosituation und Anpassung der Maßnahmen an veränderte Bedingungen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="risk-documentation">
+        <h5>Risikodokumentation</h5>
+        
+        <p>Eine strukturierte Dokumentation ist essenziell für ein erfolgreiches Risikomanagement. Verwenden Sie folgende Vorlage zur Dokumentation der identifizierten Risiken:</p>
+        
+        <div class="risk-register-example">
+            <h6>Beispiel eines Risikoregisters</h6>
+            
+            <div class="register-table-container">
+                <table class="risk-register-table">
+                    <thead>
+                        <tr>
+                            <th>Risiko-ID</th>
+                            <th>Beschreibung</th>
+                            <th>Kategorie</th>
+                            <th>Wahrscheinlichkeit</th>
+                            <th>Auswirkung</th>
+                            <th>Risikostufe</th>
+                            <th>Gegenmaßnahmen</th>
+                            <th>Verantwortlich</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T-01</td>
+                            <td>Kompatibilitätsprobleme mit bestehendem PMS-System</td>
+                            <td>Technisch</td>
+                            <td>Hoch</td>
+                            <td>Hoch</td>
+                            <td class="risk-high">Hoch</td>
+                            <td>Vorab-Integrationstests, API-Dokumentation prüfen, Anbieter einbeziehen</td>
+                            <td>IT-Leiter</td>
+                            <td>In Bearbeitung</td>
+                        </tr>
+                        <tr>
+                            <td>O-03</td>
+                            <td>Widerstand der Mitarbeiter gegen Automatisierung</td>
+                            <td>Organisatorisch</td>
+                            <td>Mittel</td>
+                            <td>Hoch</td>
+                            <td class="risk-medium">Mittel</td>
+                            <td>Frühzeitige Einbindung, Schulungen, Vorteile kommunizieren</td>
+                            <td>Personalleiter</td>
+                            <td>Geplant</td>
+                        </tr>
+                        <tr>
+                            <td>F-02</td>
+                            <td>Budgetüberschreitung durch unvorhergesehene Anpassungen</td>
+                            <td>Finanziell</td>
+                            <td>Mittel</td>
+                            <td>Mittel</td>
+                            <td class="risk-medium">Mittel</td>
+                            <td>Detaillierte Anforderungsanalyse, Pufferbudget, regelmäßige Kostenkontrolle</td>
+                            <td>Finanzcontroller</td>
+                            <td>Überwachung</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="register-download">
+                <a href="../downloads/mcp-server-risikoregister-vorlage.xlsx" class="download-button">
+                    <i class="fas fa-file-excel"></i>
+                    Risikoregister-Vorlage herunterladen
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #01A4BC, #0189A1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.section-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.risk-overview-container {
+    margin-top: 2rem;
+}
+
+.risk-categories {
+    margin-bottom: 3rem;
+}
+
+.risk-categories h5 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.risk-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.risk-category {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.category-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #01A4BC, #0189A1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto 1rem;
+}
+
+.category-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.category-content {
+    padding: 0 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-content h6 {
+    margin: 0.5rem 0 1rem;
+    color: #01A4BC;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.category-content p {
+    margin: 0 0 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.risk-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.risk-examples span {
+    background: #f0f9fa;
+    border-radius: 50px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.85rem;
+    color: #01A4BC;
+}
+
+.risk-matrix {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-matrix h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.matrix-explanation {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.matrix-explanation p {
+    margin: 0;
+}
+
+.matrix-container {
+    margin-top: 1.5rem;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-rows: auto repeat(4, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.matrix-header-row {
+    display: grid;
+    grid-template-columns: 150px repeat(4, 1fr);
+    background: #f0f9fa;
+}
+
+.matrix-corner {
+    padding: 1rem;
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.matrix-header {
+    padding: 1rem;
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.matrix-row {
+    display: grid;
+    grid-template-columns: 150px repeat(4, 1fr);
+}
+
+.matrix-row-header {
+    padding: 1rem;
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+    background: #f0f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matrix-cell {
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+}
+
+.matrix-cell.low {
+    background: #d1f7c9;
+    color: #2c6e29;
+}
+
+.matrix-cell.medium {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.matrix-cell.high {
+    background: #ffcccb;
+    color: #721c24;
+}
+
+.matrix-cell.extreme {
+    background: #dc3545;
+    color: white;
+}
+
+.matrix-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    border-radius: 4px;
+}
+
+.legend-color.low {
+    background: #d1f7c9;
+}
+
+.legend-color.medium {
+    background: #ffeeba;
+}
+
+.legend-color.high {
+    background: #ffcccb;
+}
+
+.legend-color.extreme {
+    background: #dc3545;
+}
+
+.legend-text {
+    font-size: 0.9rem;
+}
+
+.risk-management-approach {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-management-approach h5 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+.approach-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.approach-step {
+    display: flex;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 35px;
+    height: 35px;
+    background: #01A4BC;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h6 {
+    margin: 0 0 0.5rem;
+    color: #01A4BC;
+}
+
+.step-content p {
+    margin: 0;
+}
+
+.risk-documentation {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-documentation h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.risk-documentation > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.risk-register-example h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #01A4BC;
+    text-align: center;
+}
+
+.register-table-container {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.risk-register-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.risk-register-table th, .risk-register-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #e0e0e0;
+}
+
+.risk-register-table th {
+    background: #f0f9fa;
+    font-weight: 600;
+    color: #01A4BC;
+}
+
+.risk-register-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.risk-register-table .risk-high {
+    color: #721c24;
+    font-weight: 600;
+}
+
+.risk-register-table .risk-medium {
+    color: #856404;
+    font-weight: 600;
+}
+
+.register-download {
+    text-align: center;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    background: #01A4BC;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background: #018CA1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-button i {
+    margin-right: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .matrix-grid {
+        font-size: 0.8rem;
+    }
+    
+    .matrix-header-row, .matrix-row {
+        grid-template-columns: 100px repeat(4, 1fr);
+    }
+    
+    .matrix-corner, .matrix-header, .matrix-row-header, .matrix-cell {
+        padding: 0.5rem;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .section-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+</style>

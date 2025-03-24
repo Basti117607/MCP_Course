@@ -1,0 +1,93 @@
+<h3>Budgetplanung & ROI für MCP-Server-Projekte</h3>
+<p>Eine realistische Budgetplanung und eine fundierte ROI-Berechnung sind entscheidend für den Erfolg Ihres MCP-Server-Projekts im Gastgewerbe. Hier finden Sie alle notwendigen Werkzeuge und Informationen.</p>
+
+<div class="budget-sections">
+    <div class="budget-section" id="kostenplanung">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Kostenplanung wird geladen...</p>
+        </div>
+    </div>
+    
+    <div class="budget-section" id="roi-berechnung">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>ROI-Berechnung wird geladen...</p>
+        </div>
+    </div>
+    
+    <div class="budget-section" id="finanzierungsoptionen">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Finanzierungsoptionen werden geladen...</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Laden der Budget-Unterabschnitte
+document.addEventListener('DOMContentLoaded', function() {
+    loadBudgetSection('kostenplanung');
+    loadBudgetSection('roi-berechnung');
+    loadBudgetSection('finanzierungsoptionen');
+});
+
+function loadBudgetSection(sectionName) {
+    fetch(`budget-${sectionName}.html`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(sectionName).innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById(sectionName).innerHTML = `<div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Fehler beim Laden der Inhalte. Bitte versuchen Sie es später erneut.</p>
+            </div>`;
+            console.error(`Fehler beim Laden von ${sectionName}:`, error);
+        });
+}
+</script>
+
+<style>
+.budget-sections {
+    margin: 2rem 0;
+}
+
+.budget-section {
+    margin-bottom: 2.5rem;
+}
+
+.budget-section:last-child {
+    margin-bottom: 0;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.loading-content i {
+    font-size: 2rem;
+    color: #01A4BC;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #fff3f3;
+    border-radius: 10px;
+}
+
+.error-message i {
+    font-size: 2rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+</style>

@@ -1,0 +1,93 @@
+<h3>Teamstruktur für MCP-Server-Projekte</h3>
+<p>Die richtige Zusammensetzung und Organisation Ihres Projektteams ist entscheidend für den Erfolg der MCP-Server-Implementierung. Auf dieser Seite erfahren Sie, welche Rollen besetzt werden müssen und wie Sie Ihr Team optimal strukturieren.</p>
+
+<div class="team-sections">
+    <div class="team-section" id="schluesselrollen">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Schlüsselrollen wird geladen...</p>
+        </div>
+    </div>
+    
+    <div class="team-section" id="organisationsmodelle">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Organisationsmodelle werden geladen...</p>
+        </div>
+    </div>
+    
+    <div class="team-section" id="qualifikationen">
+        <div class="loading-content">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Qualifikationen und Schulungen werden geladen...</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Laden der Team-Unterabschnitte
+document.addEventListener('DOMContentLoaded', function() {
+    loadTeamSection('schluesselrollen');
+    loadTeamSection('organisationsmodelle');
+    loadTeamSection('qualifikationen');
+});
+
+function loadTeamSection(sectionName) {
+    fetch(`team-${sectionName}.html`)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(sectionName).innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById(sectionName).innerHTML = `<div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Fehler beim Laden der Inhalte. Bitte versuchen Sie es später erneut.</p>
+            </div>`;
+            console.error(`Fehler beim Laden von ${sectionName}:`, error);
+        });
+}
+</script>
+
+<style>
+.team-sections {
+    margin: 2rem 0;
+}
+
+.team-section {
+    margin-bottom: 2.5rem;
+}
+
+.team-section:last-child {
+    margin-bottom: 0;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.loading-content i {
+    font-size: 2rem;
+    color: #01A4BC;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: #fff3f3;
+    border-radius: 10px;
+}
+
+.error-message i {
+    font-size: 2rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+</style>

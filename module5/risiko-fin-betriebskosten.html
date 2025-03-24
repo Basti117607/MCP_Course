@@ -1,0 +1,421 @@
+<div class="fin-risk-category">
+    <h5>Betriebskostenrisiken</h5>
+    <p>Nach der Implementierung eines MCP-Servers können unerwartet hohe oder unterschätzte laufende Betriebskosten die Wirtschaftlichkeit des Systems gefährden. Diese Kategorie umfasst alle Kostenrisiken, die nach dem Go-Live entstehen.</p>
+    
+    <div class="risk-cards">
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-server"></i></div>
+                <div class="risk-title">Lizenzkostenentwicklung</div>
+                <div class="risk-level medium">Mittleres Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>Lizenzkosten für MCP-Server-Software und -Komponenten können sich durch Preisänderungen, Nutzungszunahme oder veränderte Lizenzmodelle unvorhergesehen entwickeln.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Steigende jährliche Betriebskosten</li>
+                        <li>Ungeplante Ausgaben bei Änderung des Lizenzmodells</li>
+                        <li>Kosten für zusätzliche User-Lizenzen bei Wachstum</li>
+                        <li>Abhängigkeit vom Anbieter (Vendor Lock-in)</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Langfristige Verträge mit Preisgarantien aushandeln</li>
+                        <li>Preisentwicklung für 3-5 Jahre vertraglich fixieren</li>
+                        <li>Alternative Anbieter als Backup evaluieren</li>
+                        <li>Flexibles Lizenzmodell mit Skalierungsoption wählen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-wrench"></i></div>
+                <div class="risk-title">Wartungs- und Supportkosten</div>
+                <div class="risk-level high">Hohes Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>Die Kosten für technische Wartung, Support und notwendige Anpassungen des MCP-Servers können die ursprünglichen Schätzungen deutlich übersteigen.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Höhere als geplante laufende IT-Support-Kosten</li>
+                        <li>Zusätzliche Kosten für externe Spezialisten</li>
+                        <li>Ungeplante Ausgaben für Fehlerbehebungen</li>
+                        <li>Steigende Kosten mit zunehmender Systemkomplexität</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Umfassende Service-Level-Agreements (SLAs) abschließen</li>
+                        <li>Interne Support-Kapazitäten gezielt aufbauen</li>
+                        <li>Jährliches Wartungsbudget realistisch kalkulieren</li>
+                        <li>Präventive statt reaktive Wartungsstrategie implementieren</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="risk-cards">
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                <div class="risk-title">Unerwartete Skalierungskosten</div>
+                <div class="risk-level medium">Mittleres Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>Mit wachsendem Nutzungsumfang können zusätzliche Hardware-, Software- oder Cloud-Ressourcen erforderlich werden, deren Kosten in der initialen Planung nicht ausreichend berücksichtigt wurden.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Unerwartete Hardware-Upgradekosten</li>
+                        <li>Steigende Cloud-Kosten bei höherer Nutzung</li>
+                        <li>Zusätzliche Kosten für Leistungsoptimierung</li>
+                        <li>Anpassungsbedarf der IT-Infrastruktur</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Skalierungsbedarf in der Wachstumsplanung berücksichtigen</li>
+                        <li>Flexible Cloud-Ressourcen mit transparentem Preismodell nutzen</li>
+                        <li>Regelmäßige Kapazitätsplanung und -prüfung</li>
+                        <li>Stufenweises Skalierungskonzept erstellen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="opex-management">
+        <h6>Betriebskosten-Management-Matrix</h6>
+        <p>Nutzen Sie die folgende Matrix, um Betriebskosten systematisch zu erfassen und zu überwachen:</p>
+        
+        <table class="opex-table">
+            <thead>
+                <tr>
+                    <th>Kostenkategorie</th>
+                    <th>Erwartete Kosten p.a.</th>
+                    <th>Risikofaktor</th>
+                    <th>Verantwortlichkeit</th>
+                    <th>Überprüfungsintervall</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Software-Lizenzen</td>
+                    <td><input type="text" placeholder="€"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="low">Niedrig</option>
+                            <option value="medium">Mittel</option>
+                            <option value="high">Hoch</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Name/Abteilung"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="monthly">Monatlich</option>
+                            <option value="quarterly">Quartalsweise</option>
+                            <option value="annually">Jährlich</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>IT-Support und Wartung</td>
+                    <td><input type="text" placeholder="€"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="low">Niedrig</option>
+                            <option value="medium">Mittel</option>
+                            <option value="high">Hoch</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Name/Abteilung"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="monthly">Monatlich</option>
+                            <option value="quarterly">Quartalsweise</option>
+                            <option value="annually">Jährlich</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Server/Cloud-Ressourcen</td>
+                    <td><input type="text" placeholder="€"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="low">Niedrig</option>
+                            <option value="medium">Mittel</option>
+                            <option value="high">Hoch</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Name/Abteilung"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="monthly">Monatlich</option>
+                            <option value="quarterly">Quartalsweise</option>
+                            <option value="annually">Jährlich</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Internes Personal</td>
+                    <td><input type="text" placeholder="€"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="low">Niedrig</option>
+                            <option value="medium">Mittel</option>
+                            <option value="high">Hoch</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Name/Abteilung"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="monthly">Monatlich</option>
+                            <option value="quarterly">Quartalsweise</option>
+                            <option value="annually">Jährlich</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Updates und Anpassungen</td>
+                    <td><input type="text" placeholder="€"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="low">Niedrig</option>
+                            <option value="medium">Mittel</option>
+                            <option value="high">Hoch</option>
+                        </select>
+                    </td>
+                    <td><input type="text" placeholder="Name/Abteilung"></td>
+                    <td>
+                        <select>
+                            <option value="">Auswählen...</option>
+                            <option value="monthly">Monatlich</option>
+                            <option value="quarterly">Quartalsweise</option>
+                            <option value="annually">Jährlich</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.fin-risk-category {
+    margin-bottom: 3rem;
+}
+
+.fin-risk-category h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #01A4BC;
+    padding-bottom: 0.5rem;
+}
+
+.risk-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.risk-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-header {
+    padding: 1rem 1.5rem;
+    background: #f0f9fa;
+    border-bottom: 1px solid #e0f0f5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.risk-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.risk-icon i {
+    font-size: 1.2rem;
+    color: #01A4BC;
+}
+
+.risk-title {
+    flex: 1;
+    font-weight: 600;
+    color: #333;
+}
+
+.risk-level {
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.risk-level.high {
+    background: #ffcccb;
+    color: #721c24;
+}
+
+.risk-level.medium {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.risk-level.low {
+    background: #d1f7c9;
+    color: #2c6e29;
+}
+
+.risk-content {
+    padding: 1.5rem;
+}
+
+.risk-description {
+    margin-bottom: 1.5rem;
+}
+
+.risk-description p {
+    margin: 0;
+}
+
+.risk-consequences, .risk-measures {
+    margin-bottom: 1.5rem;
+}
+
+.risk-consequences:last-child, .risk-measures:last-child {
+    margin-bottom: 0;
+}
+
+.risk-consequences h6, .risk-measures h6 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #01A4BC;
+}
+
+.risk-consequences ul, .risk-measures ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.risk-consequences li, .risk-measures li {
+    margin-bottom: 0.5rem;
+}
+
+.risk-consequences li:last-child, .risk-measures li:last-child {
+    margin-bottom: 0;
+}
+
+.opex-management {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.opex-management h6 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.opex-management > p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.opex-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.opex-table th {
+    background: #01A4BC;
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.opex-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.opex-table tr:last-child td {
+    border-bottom: none;
+}
+
+.opex-table input, .opex-table select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .risk-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .risk-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .opex-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+</style>

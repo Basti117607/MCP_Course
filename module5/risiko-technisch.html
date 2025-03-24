@@ -1,0 +1,70 @@
+<div class="section-header">
+    <div class="section-icon"><i class="fas fa-laptop-code"></i></div>
+    <h4>Technische Risiken bei MCP-Server-Projekten</h4>
+</div>
+
+<p>Technische Risiken gehören zu den häufigsten Herausforderungen bei der Implementierung von MCP-Servern im Gastgewerbe. Eine sorgfältige Planung und proaktive Maßnahmen können helfen, diese Risiken zu minimieren.</p>
+
+<div id="tech-risks-container">
+    <!-- Hier werden die technischen Risiken dynamisch geladen -->
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Array mit den Dateinamen der Risiko-Teildateien
+    const riskFiles = [
+        'risiko-tech-integration.html',
+        'risiko-tech-performance.html',
+        'risiko-tech-security.html',
+        'risiko-tech-skills.html'
+    ];
+    
+    const container = document.getElementById('tech-risks-container');
+    
+    // Lade alle Risiko-Dateien nacheinander
+    Promise.all(riskFiles.map(file => 
+        fetch(file)
+            .then(response => response.text())
+            .catch(error => `<div class="error-message">Fehler beim Laden von ${file}: ${error.message}</div>`)
+    ))
+    .then(contents => {
+        // Füge alle Inhalte zum Container hinzu
+        container.innerHTML = contents.join('');
+    })
+    .catch(error => {
+        container.innerHTML = `<div class="error-message">Fehler beim Laden der Risikodateien: ${error.message}</div>`;
+    });
+});
+</script>
+
+<style>
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #01A4BC, #0189A1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.section-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.error-message {
+    background: #ffcccb;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+</style>

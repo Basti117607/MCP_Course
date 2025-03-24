@@ -1,0 +1,202 @@
+<div class="fin-risk-category">
+    <h5>ROI-Risiken</h5>
+    <p>Die Rentabilität einer MCP-Server-Implementierung ist oft schwer zu prognostizieren. Verschiedene Faktoren können den erwarteten Return on Investment (ROI) gefährden und damit die wirtschaftliche Rechtfertigung des Projekts in Frage stellen.</p>
+    
+    <div class="risk-cards">
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="risk-title">Überschätzte Einsparungen</div>
+                <div class="risk-level high">Hohes Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>Potenzielle Kosteneinsparungen durch den MCP-Server werden in der Planungsphase oft zu optimistisch eingeschätzt, insbesondere bei Personalkosten und operativen Effizienzgewinnen.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Geringere tatsächliche Einsparungen als projiziert</li>
+                        <li>Längere Amortisationszeit für die Investition</li>
+                        <li>Reduzierte Rentabilität des Gesamtprojekts</li>
+                        <li>Unzufriedenheit bei Entscheidungsträgern und Stakeholdern</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Konservative Schätzung von Kosteneinsparungen</li>
+                        <li>Berücksichtigung von Best-Case- und Worst-Case-Szenarien</li>
+                        <li>Regelmäßige Überprüfung und Anpassung der ROI-Prognose</li>
+                        <li>Benchmarking mit vergleichbaren Projekten</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-hourglass-half"></i></div>
+                <div class="risk-title">Verzögerte Nutzungsadoption</div>
+                <div class="risk-level medium">Mittleres Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>Die vollständige Nutzung des MCP-Servers und seiner Funktionen durch Mitarbeiter und Gäste kann länger dauern als erwartet, was die Realisierung von Vorteilen verzögert.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Verzögerung bei der Realisierung von Effizienzgewinnen</li>
+                        <li>Längere Zeitspanne bis zur ROI-Erreichung</li>
+                        <li>Parallelnutzung alter und neuer Systeme mit erhöhten Kosten</li>
+                        <li>Unterschätzung der langfristigen Wartungskosten</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Detaillierter Adoptionsplan mit realistischen Zeitlinien</li>
+                        <li>Intensives Change Management und Nutzerschulungen</li>
+                        <li>Stufenweise Einführung mit Feedback-Schleifen</li>
+                        <li>Anreizsysteme für die frühe und umfassende Nutzung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.fin-risk-category {
+    margin-bottom: 3rem;
+}
+
+.fin-risk-category h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #01A4BC;
+    padding-bottom: 0.5rem;
+}
+
+.risk-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.risk-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-header {
+    padding: 1rem 1.5rem;
+    background: #f0f9fa;
+    border-bottom: 1px solid #e0f0f5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.risk-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.risk-icon i {
+    font-size: 1.2rem;
+    color: #01A4BC;
+}
+
+.risk-title {
+    flex: 1;
+    font-weight: 600;
+    color: #333;
+}
+
+.risk-level {
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.risk-level.high {
+    background: #ffcccb;
+    color: #721c24;
+}
+
+.risk-level.medium {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.risk-level.low {
+    background: #d1f7c9;
+    color: #2c6e29;
+}
+
+.risk-content {
+    padding: 1.5rem;
+}
+
+.risk-description {
+    margin-bottom: 1.5rem;
+}
+
+.risk-description p {
+    margin: 0;
+}
+
+.risk-consequences, .risk-measures {
+    margin-bottom: 1.5rem;
+}
+
+.risk-consequences:last-child, .risk-measures:last-child {
+    margin-bottom: 0;
+}
+
+.risk-consequences h6, .risk-measures h6 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #01A4BC;
+}
+
+.risk-consequences ul, .risk-measures ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.risk-consequences li, .risk-measures li {
+    margin-bottom: 0.5rem;
+}
+
+.risk-consequences li:last-child, .risk-measures li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .risk-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .risk-icon {
+        margin-bottom: 0.5rem;
+    }
+}
+</style>

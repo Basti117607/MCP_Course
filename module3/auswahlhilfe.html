@@ -1,0 +1,552 @@
+<h3>Interaktive Auswahlhilfe für MCP-Server</h3>
+<p>Mit diesem Tool können Sie herausfinden, welcher MCP-Server am besten zu den Anforderungen Ihres Unternehmens im Gastgewerbe passt. Beantworten Sie einfach die folgenden Fragen, um eine personalisierte Empfehlung zu erhalten.</p>
+
+<div class="decision-tool">
+    <div id="question-container">
+        <div class="question" id="question-1">
+            <h4>Frage 1: Wie groß ist Ihr Betrieb?</h4>
+            <div class="options">
+                <div class="option" data-value="small" onclick="selectOption(1, 'small')">
+                    <i class="fas fa-building"></i>
+                    <span>Klein (bis 20 Zimmer / 50 Sitzplätze)</span>
+                </div>
+                <div class="option" data-value="medium" onclick="selectOption(1, 'medium')">
+                    <i class="fas fa-hotel"></i>
+                    <span>Mittelgroß (20-100 Zimmer / 50-150 Sitzplätze)</span>
+                </div>
+                <div class="option" data-value="large" onclick="selectOption(1, 'large')">
+                    <i class="fas fa-city"></i>
+                    <span>Groß (über 100 Zimmer / 150+ Sitzplätze)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="question-2" style="display: none;">
+            <h4>Frage 2: Wie schätzen Sie Ihre technischen Vorkenntnisse ein?</h4>
+            <div class="options">
+                <div class="option" data-value="beginner" onclick="selectOption(2, 'beginner')">
+                    <i class="fas fa-baby"></i>
+                    <span>Anfänger - Keine IT-Kenntnisse vorhanden</span>
+                </div>
+                <div class="option" data-value="intermediate" onclick="selectOption(2, 'intermediate')">
+                    <i class="fas fa-user"></i>
+                    <span>Mittel - Grundlegende IT-Kenntnisse</span>
+                </div>
+                <div class="option" data-value="advanced" onclick="selectOption(2, 'advanced')">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Fortgeschritten - Technisch versiert oder eigene IT-Abteilung</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="question-3" style="display: none;">
+            <h4>Frage 3: Was ist Ihr Hauptanwendungsfall?</h4>
+            <div class="options">
+                <div class="option" data-value="booking" onclick="selectOption(3, 'booking')">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservierungsmanagement</span>
+                </div>
+                <div class="option" data-value="service" onclick="selectOption(3, 'service')">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Gästeservice & Kommunikation</span>
+                </div>
+                <div class="option" data-value="marketing" onclick="selectOption(3, 'marketing')">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Marketing & Upselling</span>
+                </div>
+                <div class="option" data-value="analytics" onclick="selectOption(3, 'analytics')">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Datenanalyse & Geschäftsoptimierung</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="question-4" style="display: none;">
+            <h4>Frage 4: Wie wichtig ist Ihnen die Integration mit bestehenden Systemen?</h4>
+            <div class="options">
+                <div class="option" data-value="not-important" onclick="selectOption(4, 'not-important')">
+                    <i class="fas fa-thumbs-down"></i>
+                    <span>Nicht wichtig - Standalone-Lösung ist ausreichend</span>
+                </div>
+                <div class="option" data-value="somewhat-important" onclick="selectOption(4, 'somewhat-important')">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span>Etwas wichtig - Grundlegende Integrationen gewünscht</span>
+                </div>
+                <div class="option" data-value="very-important" onclick="selectOption(4, 'very-important')">
+                    <i class="fas fa-star"></i>
+                    <span>Sehr wichtig - Nahtlose Integration in bestehende Systeme erforderlich</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="question-5" style="display: none;">
+            <h4>Frage 5: Welches Budget steht monatlich zur Verfügung?</h4>
+            <div class="options">
+                <div class="option" data-value="low" onclick="selectOption(5, 'low')">
+                    <i class="fas fa-euro-sign"></i>
+                    <span>Gering (unter 30€/Monat)</span>
+                </div>
+                <div class="option" data-value="medium" onclick="selectOption(5, 'medium')">
+                    <i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i>
+                    <span>Mittel (30-100€/Monat)</span>
+                </div>
+                <div class="option" data-value="high" onclick="selectOption(5, 'high')">
+                    <i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i><i class="fas fa-euro-sign"></i>
+                    <span>Hoch (über 100€/Monat)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="result-container" style="display: none;">
+        <h3>Ihre persönliche Empfehlung</h3>
+        <div id="primary-recommendation" class="recommendation">
+            <h4 id="primary-title">Hauptempfehlung</h4>
+            <p id="primary-description">Beschreibung der Hauptempfehlung</p>
+            <div class="recommendation-details">
+                <div class="detail">
+                    <h5>Monatliche Kosten</h5>
+                    <p id="primary-cost">€€</p>
+                </div>
+                <div class="detail">
+                    <h5>Benutzerfreundlichkeit</h5>
+                    <p id="primary-usability">★★★★☆</p>
+                </div>
+                <div class="detail">
+                    <h5>Integration</h5>
+                    <p id="primary-integration">★★★☆☆</p>
+                </div>
+            </div>
+            <a id="primary-link" href="#" class="cta-button" target="_blank">Mehr erfahren</a>
+        </div>
+        
+        <h4>Alternative Optionen</h4>
+        <div class="alternative-recommendations">
+            <div id="secondary-recommendation" class="recommendation alt-recommendation">
+                <h5 id="secondary-title">Alternative 1</h5>
+                <p id="secondary-description">Beschreibung der ersten Alternative</p>
+                <a id="secondary-link" href="#" class="cta-button-small" target="_blank">Mehr erfahren</a>
+            </div>
+            
+            <div id="tertiary-recommendation" class="recommendation alt-recommendation">
+                <h5 id="tertiary-title">Alternative 2</h5>
+                <p id="tertiary-description">Beschreibung der zweiten Alternative</p>
+                <a id="tertiary-link" href="#" class="cta-button-small" target="_blank">Mehr erfahren</a>
+            </div>
+        </div>
+        
+        <div class="refresh-tool">
+            <button onclick="resetTool()" class="secondary-button">
+                <i class="fas fa-redo"></i> Neu starten
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="key-point" style="margin-top: 2rem;">
+    <h4>Hinweis:</h4>
+    <p>Diese Auswahlhilfe gibt eine erste Orientierung basierend auf Ihren Angaben. Für eine detaillierte und personalisierte Beratung kontaktieren Sie bitte die H24 Consulting Gruppe.</p>
+</div>
+
+<script>
+// Speicherung der Antworten
+let userAnswers = {
+    size: '',
+    tech_level: '',
+    use_case: '',
+    integration: '',
+    budget: ''
+};
+
+// Logik zur Auswahl einer Option
+function selectOption(questionNumber, value) {
+    // Antwort speichern
+    switch(questionNumber) {
+        case 1: userAnswers.size = value; break;
+        case 2: userAnswers.tech_level = value; break;
+        case 3: userAnswers.use_case = value; break;
+        case 4: userAnswers.integration = value; break;
+        case 5: userAnswers.budget = value; break;
+    }
+    
+    // Aktuelle Frage markieren
+    document.querySelectorAll(`#question-${questionNumber} .option`).forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    document.querySelector(`#question-${questionNumber} .option[data-value="${value}"]`).classList.add('selected');
+    
+    // Zur nächsten Frage gehen oder Ergebnis anzeigen
+    if (questionNumber < 5) {
+        setTimeout(() => {
+            document.getElementById(`question-${questionNumber}`).style.display = 'none';
+            document.getElementById(`question-${questionNumber + 1}`).style.display = 'block';
+        }, 500);
+    } else {
+        // Bei der letzten Frage das Ergebnis anzeigen
+        setTimeout(() => {
+            document.getElementById('question-container').style.display = 'none';
+            showResult();
+            document.getElementById('result-container').style.display = 'block';
+        }, 500);
+    }
+}
+
+// Anzeige des Ergebnisses basierend auf den Antworten
+function showResult() {
+    let primaryRec, secondaryRec, tertiaryRec;
+    
+    // Logik für die Empfehlungen basierend auf Benutzereingaben
+    
+    // Beispiel für einen einfachen Entscheidungsbaum:
+    if (userAnswers.tech_level === 'beginner') {
+        if (userAnswers.budget === 'low') {
+            primaryRec = {
+                title: "Smithery.ai Basis",
+                description: "Die ideale Einsteigerlösung für kleine Betriebe ohne technisches Know-how. Smithery.ai bietet eine benutzerfreundliche Oberfläche und zahlreiche Templates speziell für das Gastgewerbe.",
+                cost: "19€/Monat",
+                usability: "★★★★★",
+                integration: "★★★☆☆",
+                link: "https://smithery.ai"
+            };
+            secondaryRec = {
+                title: "Fixie.ai Standard",
+                description: "Eine gute Alternative mit Fokus auf Kundenkommunikation zu einem günstigen Preis.",
+                link: "https://fixie.ai"
+            };
+            tertiaryRec = {
+                title: "Hospitality.ai Basic",
+                description: "Etwas teurer, aber mit besseren Branchenintegrationen für das Gastgewerbe.",
+                link: "https://hospitality.ai"
+            };
+        } else if (userAnswers.budget === 'medium') {
+            if (userAnswers.use_case === 'service') {
+                primaryRec = {
+                    title: "Fixie.ai Premium",
+                    description: "Die beste Lösung für kundenorientierte Betriebe. Spezialisiert auf nahtlose Kommunikation mit Ihren Gästen über verschiedene Kanäle.",
+                    cost: "79€/Monat",
+                    usability: "★★★★☆",
+                    integration: "★★★★☆",
+                    link: "https://fixie.ai"
+                };
+                secondaryRec = {
+                    title: "Hospitality.ai Professional",
+                    description: "Ausgezeichnete Branchenlösung mit integrierten Kommunikationstools.",
+                    link: "https://hospitality.ai"
+                };
+                tertiaryRec = {
+                    title: "Smithery.ai Pro",
+                    description: "Einfach zu bedienen mit soliden Kommunikationsfunktionen.",
+                    link: "https://smithery.ai"
+                };
+            } else {
+                primaryRec = {
+                    title: "Hospitality.ai Professional",
+                    description: "Die umfassendste Branchenlösung für das Gastgewerbe. Perfekt für mittelgroße Betriebe mit moderatem Budget und verschiedenen Anwendungsfällen.",
+                    cost: "89€/Monat",
+                    usability: "★★★★★",
+                    integration: "★★★★★",
+                    link: "https://hospitality.ai"
+                };
+                secondaryRec = {
+                    title: "Smithery.ai Pro",
+                    description: "Günstiger und einfacher zu bedienen, aber mit weniger Branchenintegrationen.",
+                    link: "https://smithery.ai"
+                };
+                tertiaryRec = {
+                    title: "Portkey.ai Business",
+                    description: "Mehr Anpassungsmöglichkeiten, aber etwas technischer in der Bedienung.",
+                    link: "https://portkey.ai"
+                };
+            }
+        } else { // high budget
+            primaryRec = {
+                title: "Hospitality.ai Complete",
+                description: "Das Premium-Paket für anspruchsvolle Betriebe. Umfasst alle Funktionen sowie On-Site-Support und persönliche Betreuung.",
+                cost: "149€/Monat",
+                usability: "★★★★★",
+                integration: "★★★★★",
+                link: "https://hospitality.ai"
+            };
+            secondaryRec = {
+                title: "Portkey.ai Premium",
+                description: "Hochsichere Lösung mit umfangreichen Anpassungsmöglichkeiten.",
+                link: "https://portkey.ai"
+            };
+            tertiaryRec = {
+                title: "Managed LangChain Solution",
+                description: "Vollständig maßgeschneiderte Lösung auf Basis des LangChain-Frameworks.",
+                link: "https://www.langchain.com"
+            };
+        }
+    } else if (userAnswers.tech_level === 'intermediate') {
+        if (userAnswers.integration === 'very-important') {
+            primaryRec = {
+                title: "Portkey.ai Business",
+                description: "Bietet die umfangreichsten Integrationsmöglichkeiten für bestehende Systeme. Ideal für technisch versierte Nutzer, die Wert auf nahtlose Anbindung legen.",
+                cost: "49€/Monat",
+                usability: "★★★☆☆",
+                integration: "★★★★★",
+                link: "https://portkey.ai"
+            };
+            secondaryRec = {
+                title: "Hospitality.ai Professional",
+                description: "Einfacher zu bedienen mit spezifischen Integrationen für die Hospitality-Branche.",
+                link: "https://hospitality.ai"
+            };
+            tertiaryRec = {
+                title: "Smithery.ai Pro",
+                description: "Benutzerfreundlicher, aber mit etwas weniger umfangreichen Integrationsmöglichkeiten.",
+                link: "https://smithery.ai"
+            };
+        } else {
+            primaryRec = {
+                title: "Smithery.ai Pro",
+                description: "Ausgewogene Lösung mit gutem Preis-Leistungs-Verhältnis für technisch versierte Nutzer, die eine benutzerfreundliche Oberfläche schätzen.",
+                cost: "49€/Monat",
+                usability: "★★★★☆",
+                integration: "★★★★☆",
+                link: "https://smithery.ai"
+            };
+            secondaryRec = {
+                title: "Fixie.ai Standard",
+                description: "Kostengünstigere Alternative mit Fokus auf Kundenkommunikation.",
+                link: "https://fixie.ai"
+            };
+            tertiaryRec = {
+                title: "Hospitality.ai Professional",
+                description: "Umfassendere, aber teurere Branchenlösung mit mehr Funktionen.",
+                link: "https://hospitality.ai"
+            };
+        }
+    } else { // advanced
+        if (userAnswers.size === 'large' || userAnswers.integration === 'very-important') {
+            primaryRec = {
+                title: "LangChain (Self-Hosted)",
+                description: "Die flexibelste Lösung für technisch versierte Teams oder Unternehmen mit eigener IT-Abteilung. Vollständig anpassbar und kostenfrei bei Selbst-Hosting.",
+                cost: "Kostenlos (Self-Hosted)",
+                usability: "★★☆☆☆",
+                integration: "★★★★★",
+                link: "https://www.langchain.com"
+            };
+            secondaryRec = {
+                title: "Portkey.ai Premium",
+                description: "Kommerzielle Alternative mit erstklassigem Support und Sicherheitsfunktionen.",
+                link: "https://portkey.ai"
+            };
+            tertiaryRec = {
+                title: "Hospitality.ai Complete",
+                description: "Spezialisierte Branchenlösung mit weniger Anpassungsmöglichkeiten, aber einfacherer Bedienung.",
+                link: "https://hospitality.ai"
+            };
+        } else {
+            primaryRec = {
+                title: "Portkey.ai Business",
+                description: "Bietet eine gute Balance zwischen Anpassungsmöglichkeiten und benutzerfreundlichem Interface für technisch versierte Teams.",
+                cost: "49€/Monat",
+                usability: "★★★☆☆",
+                integration: "★★★★★",
+                link: "https://portkey.ai"
+            };
+            secondaryRec = {
+                title: "LangChain (Self-Hosted)",
+                description: "Komplett anpassbar, erfordert aber mehr technisches Know-how und eigenes Hosting.",
+                link: "https://www.langchain.com"
+            };
+            tertiaryRec = {
+                title: "Hospitality.ai Professional",
+                description: "Branchenspezifische Lösung mit einfacherer Bedienung, aber weniger Anpassungsmöglichkeiten.",
+                link: "https://hospitality.ai"
+            };
+        }
+    }
+    
+    // Empfehlungen im DOM setzen
+    document.getElementById('primary-title').textContent = primaryRec.title;
+    document.getElementById('primary-description').textContent = primaryRec.description;
+    document.getElementById('primary-cost').textContent = primaryRec.cost;
+    document.getElementById('primary-usability').textContent = primaryRec.usability;
+    document.getElementById('primary-integration').textContent = primaryRec.integration;
+    document.getElementById('primary-link').href = primaryRec.link;
+    
+    document.getElementById('secondary-title').textContent = secondaryRec.title;
+    document.getElementById('secondary-description').textContent = secondaryRec.description;
+    document.getElementById('secondary-link').href = secondaryRec.link;
+    
+    document.getElementById('tertiary-title').textContent = tertiaryRec.title;
+    document.getElementById('tertiary-description').textContent = tertiaryRec.description;
+    document.getElementById('tertiary-link').href = tertiaryRec.link;
+}
+
+// Tool zurücksetzen
+function resetTool() {
+    userAnswers = {
+        size: '',
+        tech_level: '',
+        use_case: '',
+        integration: '',
+        budget: ''
+    };
+    
+    // Alle Auswahlen zurücksetzen
+    document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    
+    // Nur erste Frage anzeigen, Rest ausblenden
+    document.querySelectorAll('.question').forEach(q => {
+        q.style.display = 'none';
+    });
+    document.getElementById('question-1').style.display = 'block';
+    
+    // Ergebnis ausblenden
+    document.getElementById('result-container').style.display = 'none';
+    document.getElementById('question-container').style.display = 'block';
+}
+</script>
+
+<style>
+/* Ergänzende Stile für die Auswahlhilfe */
+.decision-tool {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+.question {
+    margin-bottom: 2rem;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option {
+    flex: 1;
+    min-width: 200px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.option i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #01A4BC;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.option.selected {
+    background: #01A4BC;
+    color: white;
+}
+
+.option.selected i {
+    color: white;
+}
+
+.recommendation {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-details {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+
+.detail {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.alt-recommendation {
+    flex: 1;
+    min-width: 250px;
+}
+
+.alternative-recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.refresh-tool {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.secondary-button {
+    background: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: #e1e1e1;
+}
+
+.cta-button-small {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #01A4BC;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.cta-button-small:hover {
+    background: #018da3;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+    }
+    
+    .option {
+        min-width: unset;
+    }
+    
+    .recommendation-details {
+        flex-direction: column;
+    }
+    
+    .alternative-recommendations {
+        flex-direction: column;
+    }
+}
+</style>

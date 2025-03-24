@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risikomanagement für MCP-Server-Projekte</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="content-container">
+        <div class="module-header">
+            <div class="module-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="module-title">
+                <h3>Risikomanagement für MCP-Server-Projekte</h3>
+                <p>Identifizieren, bewerten und minimieren Sie Risiken für erfolgreiche MCP-Server-Implementierungen im Gastgewerbe</p>
+            </div>
+        </div>
+
+        <div class="module-intro">
+            <p>Die Implementierung eines MCP-Servers bringt wie jedes Technologieprojekt verschiedene Risiken mit sich. Ein systematisches Risikomanagement hilft Ihnen, potenzielle Probleme frühzeitig zu erkennen und proaktiv zu adressieren, bevor sie zu ernsthaften Hindernissen werden.</p>
+            <p>In diesem Abschnitt lernen Sie, typische Risiken bei MCP-Server-Projekten zu identifizieren, zu bewerten und geeignete Maßnahmen zur Risikominimierung zu entwickeln.</p>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab active" data-tab="risiko-ueberblick">Überblick</div>
+            <div class="tab" data-tab="risiko-technisch">Technische Risiken</div>
+            <div class="tab" data-tab="risiko-organisatorisch">Organisatorische Risiken</div>
+            <div class="tab" data-tab="risiko-finanziell">Finanzielle Risiken</div>
+            <div class="tab" data-tab="risiko-management">Risikomanagement-Prozess</div>
+        </div>
+
+        <div class="tab-content">
+            <div id="tab-content-container">
+                <!-- Inhalt wird dynamisch geladen -->
+                <div class="loading-spinner">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                    <span>Inhalte werden geladen...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial tab content laden
+            loadTabContent('risiko-ueberblick');
+            
+            // Tab click event
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Aktiven Tab markieren
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Tab-Inhalt laden
+                    const tabId = this.getAttribute('data-tab');
+                    loadTabContent(tabId);
+                });
+            });
+            
+            // Funktion zum Laden des Tab-Inhalts
+            function loadTabContent(tabId) {
+                const contentContainer = document.getElementById('tab-content-container');
+                contentContainer.innerHTML = '<div class="loading-spinner"><i class="fas fa-circle-notch fa-spin"></i><span>Inhalte werden geladen...</span></div>';
+                
+                // Pfad zur Inhaltsdatei basierend auf der Tab-ID
+                let contentPath;
+                switch(tabId) {
+                    case 'risiko-ueberblick':
+                        contentPath = 'risiko-ueberblick.html';
+                        break;
+                    case 'risiko-technisch':
+                        contentPath = 'risiko-technisch.html';
+                        break;
+                    case 'risiko-organisatorisch':
+                        contentPath = 'risiko-organisatorisch.html';
+                        break;
+                    case 'risiko-finanziell':
+                        contentPath = 'risiko-finanziell.html';
+                        break;
+                    case 'risiko-management':
+                        contentPath = 'risiko-management.html';
+                        break;
+                    default:
+                        contentPath = 'risiko-ueberblick.html';
+                }
+                
+                // Inhalt laden
+                fetch(contentPath)
+                    .then(response => response.text())
+                    .then(html => {
+                        contentContainer.innerHTML = html;
+                    })
+                    .catch(error => {
+                        contentContainer.innerHTML = `
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <p>Fehler beim Laden des Inhalts. Bitte versuchen Sie es später erneut.</p>
+                                <p>Technische Details: ${error.message}</p>
+                            </div>
+                        `;
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

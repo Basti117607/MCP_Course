@@ -1,0 +1,407 @@
+<div class="tech-risk-category">
+    <h5>Sicherheits- und Datenschutzrisiken</h5>
+    <p>MCP-Server verarbeiten sensible Gästedaten und sind mit kritischen Hotelsystemen verbunden. Sicherheitsrisiken können daher schwerwiegende Auswirkungen haben und müssen besonders sorgfältig adressiert werden.</p>
+    
+    <div class="risk-cards">
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="risk-title">Datenschutzverletzungen</div>
+                <div class="risk-level high">Hohes Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>MCP-Server verarbeiten und speichern zahlreiche personenbezogene Daten (Namen, Kontaktdaten, Präferenzen, Zahlungsinformationen). Ein unzureichender Schutz kann zu Datenschutzverletzungen führen.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Rechtliche Konsequenzen durch DSGVO-Verstöße (Bußgelder bis zu 20 Mio. € oder 4% des Jahresumsatzes)</li>
+                        <li>Reputationsschäden und Vertrauensverlust bei Gästen</li>
+                        <li>Kosten für Benachrichtigungen, Untersuchungen und Behebungsmaßnahmen</li>
+                        <li>Mögliche Schadenersatzforderungen von betroffenen Personen</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Durchführung einer Datenschutz-Folgenabschätzung (DSFA)</li>
+                        <li>Implementierung von Verschlüsselung bei der Speicherung und Übertragung</li>
+                        <li>Klare Zugriffsberechtigungen und Rolle-basierte Zugriffskontrolle</li>
+                        <li>Minimierung der gespeicherten Daten gemäß Datensparsamkeitsprinzip</li>
+                        <li>Regelmäßige Sicherheitsaudits und Penetrationstests</li>
+                        <li>Schulung aller Mitarbeiter zu Datenschutzpraktiken</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-user-secret"></i></div>
+                <div class="risk-title">Unbefugte Systemzugriffe</div>
+                <div class="risk-level high">Hohes Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>MCP-Server können Ziel von Hackerangriffen werden, insbesondere wenn sie Zugriff auf kritische Systeme haben oder wertvolle Gästedaten speichern.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Datendiebstahl und -missbrauch</li>
+                        <li>Manipulation von Reservierungen, Abrechnungen oder Gästedaten</li>
+                        <li>Zugriff auf verbundene Systeme (Lateral Movement)</li>
+                        <li>Installation von Malware oder Ransomware</li>
+                        <li>Betriebsunterbrechungen und finanzielle Verluste</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Implementierung eines robusten Authentifizierungssystems (MFA)</li>
+                        <li>Regelmäßige Aktualisierung aller Systemkomponenten und Sicherheitspatches</li>
+                        <li>Netzwerksegmentierung und sichere Firewallkonfiguration</li>
+                        <li>Implementierung von Intrusion Detection/Prevention Systems (IDS/IPS)</li>
+                        <li>Regelmäßige Sicherheitsaudits und Penetrationstests</li>
+                        <li>Security Incident Response Plan entwickeln und testen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="risk-cards">
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-robot"></i></div>
+                <div class="risk-title">KI-spezifische Sicherheitsrisiken</div>
+                <div class="risk-level medium">Mittleres Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>MCP-Server basieren auf KI-Technologien, die spezifische Sicherheitsrisiken mit sich bringen, wie Prompt Injection, Modellmanipulation oder unerwünschte Ausgaben.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Manipulation des MCP-Servers zu unerwünschtem Verhalten</li>
+                        <li>Extraction von vertraulichen Informationen durch gezielte Prompts</li>
+                        <li>Generierung von unangemessenen oder falschen Antworten</li>
+                        <li>Missbrauch des Systems für Social Engineering</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Implementierung von Prompt-Filtern und -Validierung</li>
+                        <li>Content-Filter für generierte Antworten</li>
+                        <li>Regelmäßiges Training und Feinabstimmung des KI-Modells</li>
+                        <li>Überwachung und Logging verdächtiger Interaktionen</li>
+                        <li>Regelmäßige Tests auf KI-spezifische Sicherheitslücken</li>
+                        <li>Begrenzung des Zugriffs auf sensible Daten und Funktionen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="risk-card">
+            <div class="risk-header">
+                <div class="risk-icon"><i class="fas fa-handshake"></i></div>
+                <div class="risk-title">Risiken durch Drittanbieter und Supply Chain</div>
+                <div class="risk-level medium">Mittleres Risiko</div>
+            </div>
+            <div class="risk-content">
+                <div class="risk-description">
+                    <p>MCP-Server nutzen oft Dienste und Komponenten von verschiedenen Drittanbietern. Sicherheitsprobleme bei diesen Anbietern können sich auf die Sicherheit des gesamten Systems auswirken.</p>
+                </div>
+                <div class="risk-consequences">
+                    <h6>Mögliche Folgen:</h6>
+                    <ul>
+                        <li>Sicherheitsverletzungen durch schwache Sicherheitsmaßnahmen bei Drittanbietern</li>
+                        <li>Datenschutzprobleme durch unzureichende Verträge oder Compliance</li>
+                        <li>Kompromittierte Software-Komponenten (Supply-Chain-Angriffe)</li>
+                        <li>Abhängigkeit von der Sicherheit externer Dienste</li>
+                    </ul>
+                </div>
+                <div class="risk-measures">
+                    <h6>Präventivmaßnahmen:</h6>
+                    <ul>
+                        <li>Sorgfältige Prüfung und Due Diligence bei der Auswahl von Anbietern</li>
+                        <li>Robuste Verträge mit klaren Sicherheits- und Datenschutzanforderungen</li>
+                        <li>Regelmäßige Sicherheitsüberprüfungen von Drittanbieterkomponenten</li>
+                        <li>Implementierung von Software Composition Analysis (SCA)</li>
+                        <li>Plan für den Ausfall oder die Kompromittierung eines Drittanbieters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="compliance-box">
+        <div class="compliance-icon"><i class="fas fa-balance-scale"></i></div>
+        <div class="compliance-content">
+            <h6>DSGVO-Compliance-Checkliste für MCP-Server im Gastgewerbe</h6>
+            <ul class="compliance-checklist">
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Datenschutz-Folgenabschätzung (DSFA):</strong> Durchführen einer DSFA für den MCP-Server, da er umfangreiche personenbezogene Daten verarbeitet.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Datenverarbeitungsverzeichnis:</strong> Dokumentation aller Verarbeitungstätigkeiten, Datenflüsse und Speicherorte.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Einwilligungen:</strong> Implementierung von klaren Einwilligungsmechanismen für die Nutzung des MCP-Servers durch Gäste.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Datenschutzerklärung:</strong> Anpassung der Datenschutzerklärung mit spezifischen Informationen zur MCP-Server-Nutzung.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Auftragsverarbeitungsverträge:</strong> Abschluss von AVVs mit allen beteiligten Dienstleistern (MCP-Server-Anbieter, Cloud-Provider, etc.).
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Technische und organisatorische Maßnahmen:</strong> Dokumentation aller Sicherheitsmaßnahmen zum Schutz personenbezogener Daten.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Auskunfts- und Löschverfahren:</strong> Prozesse für Datenauskunft, -korrektur, -löschung und Widerspruchsrecht implementieren.
+                    </div>
+                </li>
+                <li class="checklist-item">
+                    <div class="checklist-marker"><i class="fas fa-check-circle"></i></div>
+                    <div class="checklist-text">
+                        <strong>Datenschutz-Schulungen:</strong> Regelmäßige Schulungen für alle Mitarbeiter, die mit dem MCP-Server arbeiten.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.tech-risk-category {
+    margin-bottom: 3rem;
+}
+
+.tech-risk-category h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #01A4BC;
+    padding-bottom: 0.5rem;
+}
+
+.risk-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.risk-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.risk-header {
+    padding: 1rem 1.5rem;
+    background: #f0f9fa;
+    border-bottom: 1px solid #e0f0f5;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.risk-icon {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.risk-icon i {
+    font-size: 1.2rem;
+    color: #01A4BC;
+}
+
+.risk-title {
+    flex: 1;
+    font-weight: 600;
+    color: #333;
+}
+
+.risk-level {
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.risk-level.high {
+    background: #ffcccb;
+    color: #721c24;
+}
+
+.risk-level.medium {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.risk-level.low {
+    background: #d1f7c9;
+    color: #2c6e29;
+}
+
+.risk-content {
+    padding: 1.5rem;
+}
+
+.risk-description {
+    margin-bottom: 1.5rem;
+}
+
+.risk-description p {
+    margin: 0;
+}
+
+.risk-consequences, .risk-measures {
+    margin-bottom: 1.5rem;
+}
+
+.risk-consequences:last-child, .risk-measures:last-child {
+    margin-bottom: 0;
+}
+
+.risk-consequences h6, .risk-measures h6 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #01A4BC;
+}
+
+.risk-consequences ul, .risk-measures ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.risk-consequences li, .risk-measures li {
+    margin-bottom: 0.5rem;
+}
+
+.risk-consequences li:last-child, .risk-measures li:last-child {
+    margin-bottom: 0;
+}
+
+.compliance-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.compliance-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #01A4BC, #0189A1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.compliance-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.compliance-content {
+    flex: 1;
+}
+
+.compliance-content h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.compliance-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.checklist-item:last-child {
+    margin-bottom: 0;
+}
+
+.checklist-marker {
+    margin-right: 0.75rem;
+    color: #28a745;
+    flex-shrink: 0;
+}
+
+.checklist-text {
+    flex: 1;
+}
+
+.checklist-text strong {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .risk-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .risk-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .compliance-box {
+        flex-direction: column;
+    }
+    
+    .compliance-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+</style>

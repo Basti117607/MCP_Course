@@ -1,0 +1,627 @@
+<h3>Praktische Übung: Erstellung eines einfachen MCP-Servers für Ihr Gastgewerbe</h3>
+<p>In dieser praktischen Übung lernen Sie, wie Sie einen einfachen MCP-Server für eine typische Anwendung im Gastgewerbe einrichten können. Wir nutzen dabei eine benutzerfreundliche No-Code-Plattform, sodass keine Programmierkenntnisse erforderlich sind.</p>
+
+<div class="tutorial-intro">
+    <div class="intro-grid">
+        <div class="intro-item">
+            <i class="fas fa-clock"></i>
+            <h4>Zeitaufwand</h4>
+            <p>ca. 60-90 Minuten</p>
+        </div>
+        <div class="intro-item">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Schwierigkeitsgrad</h4>
+            <p>Anfänger</p>
+        </div>
+        <div class="intro-item">
+            <i class="fas fa-tools"></i>
+            <h4>Benötigte Tools</h4>
+            <p>Web-Browser, E-Mail-Adresse</p>
+        </div>
+        <div class="intro-item">
+            <i class="fas fa-euro-sign"></i>
+            <h4>Kosten</h4>
+            <p>Kostenlos (Testversion)</p>
+        </div>
+    </div>
+    
+    <div class="tutorial-goal">
+        <h4>Zielsetzung:</h4>
+        <p>In dieser Übung erstellen wir einen einfachen MCP-Server für ein Restaurant, der Reservierungsanfragen bearbeiten, häufige Fragen beantworten und Menüinformationen bereitstellen kann. Am Ende haben Sie einen funktionierenden Prototyp, den Sie über verschiedene Kanäle testen können.</p>
+    </div>
+</div>
+
+<div class="tutorial-overview">
+    <h4>Übersicht der Schritte:</h4>
+    <ol class="steps-overview">
+        <li>Anmeldung bei Smithery.ai und Einrichtung eines Testkontos</li>
+        <li>Auswahl und Anpassung einer Restaurant-Vorlage</li>
+        <li>Konfiguration von Wissensbasis und Antworten</li>
+        <li>Einrichtung von Reservierungsfunktionen</li>
+        <li>Test und Optimierung des MCP-Servers</li>
+        <li>Integration in eine Website (optional)</li>
+    </ol>
+</div>
+
+<div class="tutorial-steps">
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">1</div>
+            <h4>Anmeldung bei Smithery.ai und Einrichtung eines Testkontos</h4>
+        </div>
+        <div class="step-content">
+            <p>Für diese Übung verwenden wir Smithery.ai, eine benutzerfreundliche Plattform, die eine kostenlose 14-tägige Testversion ohne Kreditkartenangabe anbietet.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Öffnen Sie <a href="https://smithery.ai" target="_blank">https://smithery.ai</a> in Ihrem Browser</li>
+                    <li>Klicken Sie auf den Button "Kostenlos testen" oder "Free Trial"</li>
+                    <li>Erstellen Sie ein Konto mit Ihrer E-Mail-Adresse</li>
+                    <li>Bestätigen Sie Ihre E-Mail-Adresse über den Bestätigungslink</li>
+                    <li>Melden Sie sich mit Ihren Zugangsdaten an</li>
+                </ol>
+            </div>
+            
+            <div class="tutorial-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Hinweis: Falls Smithery.ai in Ihrer Region nicht verfügbar sein sollte, können Sie alternativ andere Plattformen wie Fixie.ai oder LangChain nutzen, die ähnliche Funktionen bieten.</p>
+            </div>
+            
+            <div class="step-screenshot">
+                <img src="../images/tutorial-signup.jpg" alt="Screenshot der Anmeldeseite von Smithery.ai">
+                <div class="caption">Anmeldebildschirm von Smithery.ai mit Free-Trial-Option</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">2</div>
+            <h4>Auswahl und Anpassung einer Restaurant-Vorlage</h4>
+        </div>
+        <div class="step-content">
+            <p>Smithery.ai bietet verschiedene vorgefertigte Vorlagen für unterschiedliche Branchen. Wir verwenden eine Restaurant-Vorlage als Ausgangspunkt.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Klicken Sie nach der Anmeldung auf "Create New Bot" oder "Neuen Bot erstellen"</li>
+                    <li>Wählen Sie in der Kategorie "Hospitality" die Vorlage "Restaurant Assistant"</li>
+                    <li>Geben Sie Ihrem MCP-Server einen Namen (z.B. "Mein Restaurant-Assistent")</li>
+                    <li>Füllen Sie die Grundinformationen zu Ihrem (fiktiven) Restaurant aus:
+                        <ul>
+                            <li>Name des Restaurants</li>
+                            <li>Art der Küche</li>
+                            <li>Adresse</li>
+                            <li>Öffnungszeiten</li>
+                            <li>Kurze Beschreibung</li>
+                        </ul>
+                    </li>
+                    <li>Klicken Sie auf "Create" oder "Erstellen", um die Vorlage zu laden</li>
+                </ol>
+            </div>
+            
+            <div class="step-screenshot">
+                <img src="../images/tutorial-template.jpg" alt="Auswahl der Restaurant-Vorlage">
+                <div class="caption">Auswahl der Restaurant-Vorlage und Eingabe der Grundinformationen</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">3</div>
+            <h4>Konfiguration von Wissensbasis und Antworten</h4>
+        </div>
+        <div class="step-content">
+            <p>In diesem Schritt füllen wir die Wissensbasis des MCP-Servers mit Informationen, die für Gästeanfragen relevant sind.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Navigieren Sie zum Bereich "Knowledge Base" oder "Wissensbasis"</li>
+                    <li>Fügen Sie Informationen zu folgenden Bereichen hinzu:
+                        <ul>
+                            <li><strong>Speisekarte:</strong> Mindestens 5-10 Gerichte mit Beschreibung und Preis</li>
+                            <li><strong>Getränkekarte:</strong> Einige Getränkeoptionen</li>
+                            <li><strong>Allergeninformationen:</strong> Welche Gerichte enthalten welche Allergene</li>
+                            <li><strong>Häufig gestellte Fragen:</strong> Mindestens 5 FAQs mit Antworten</li>
+                        </ul>
+                    </li>
+                    <li>Wechseln Sie zum Bereich "Training" oder "Trainieren"</li>
+                    <li>Fügen Sie Beispieldialoge hinzu, z.B.:
+                        <ul>
+                            <li>Frage nach Öffnungszeiten und Antwort</li>
+                            <li>Frage nach vegetarischen Optionen und Antwort</li>
+                            <li>Frage nach Parkmöglichkeiten und Antwort</li>
+                        </ul>
+                    </li>
+                    <li>Klicken Sie auf "Save" oder "Speichern", um die Änderungen zu übernehmen</li>
+                </ol>
+            </div>
+            
+            <div class="tutorial-tip">
+                <i class="fas fa-lightbulb"></i>
+                <p>Tipp: Je mehr relevante Informationen Sie hinzufügen, desto besser kann der MCP-Server auf Kundenanfragen reagieren. Denken Sie an Details wie Kinderfreundlichkeit, Barrierefreiheit, WLAN-Verfügbarkeit etc.</p>
+            </div>
+            
+            <div class="sample-content">
+                <h5>Beispiel für einen FAQ-Eintrag:</h5>
+                <div class="content-box">
+                    <p><strong>Frage:</strong> Bieten Sie glutenfreie Optionen an?</p>
+                    <p><strong>Antwort:</strong> Ja, wir haben mehrere glutenfreie Gerichte auf unserer Speisekarte. Dazu gehören unsere Quinoa-Bowl, der gegrillte Lachs und alle unsere Salate. Bei der Bestellung können Sie dem Service-Personal mitteilen, dass Sie glutenfrei essen möchten, damit wir auf Kreuzkontamination achten können.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">4</div>
+            <h4>Einrichtung von Reservierungsfunktionen</h4>
+        </div>
+        <div class="step-content">
+            <p>Jetzt richten wir ein Formular für Reservierungsanfragen ein, das der MCP-Server verwenden kann, um Reservierungen entgegenzunehmen.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Navigieren Sie zum Bereich "Forms" oder "Formulare"</li>
+                    <li>Wählen Sie die Vorlage "Reservation Form" oder "Reservierungsformular"</li>
+                    <li>Passen Sie die Felder nach Bedarf an:
+                        <ul>
+                            <li>Name</li>
+                            <li>E-Mail und/oder Telefonnummer</li>
+                            <li>Datum und Uhrzeit</li>
+                            <li>Anzahl der Personen</li>
+                            <li>Besondere Anlässe (optional)</li>
+                            <li>Besondere Wünsche (optional)</li>
+                        </ul>
+                    </li>
+                    <li>Konfigurieren Sie die Bestätigungsnachricht, die nach erfolgreicher Reservierung angezeigt wird</li>
+                    <li>Unter "Integrations" oder "Integrationen" können Sie festlegen, wo die Reservierungsdaten gespeichert werden (für diese Übung können Sie die Standard-Einstellung belassen)</li>
+                    <li>Klicken Sie auf "Save" oder "Speichern", um die Änderungen zu übernehmen</li>
+                </ol>
+            </div>
+            
+            <div class="tutorial-tip">
+                <i class="fas fa-lightbulb"></i>
+                <p>Tipp: Definieren Sie unter "Business Rules" oder "Geschäftsregeln" einige Bedingungen, z.B. maximale Tischgröße, Mindestvorlaufzeit für Reservierungen oder Stoßzeiten, in denen keine oder nur begrenzte Reservierungen möglich sind.</p>
+            </div>
+            
+            <div class="step-screenshot">
+                <img src="../images/tutorial-reservation.jpg" alt="Einrichtung des Reservierungsformulars">
+                <div class="caption">Konfiguration des Reservierungsformulars für den MCP-Server</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">5</div>
+            <h4>Test und Optimierung des MCP-Servers</h4>
+        </div>
+        <div class="step-content">
+            <p>Bevor wir den MCP-Server in der realen Welt einsetzen, sollten wir ihn gründlich testen und optimieren.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Klicken Sie auf "Test" oder "Preview", um den Test-Modus zu starten</li>
+                    <li>Führen Sie verschiedene Testgespräche durch:
+                        <ul>
+                            <li>Fragen Sie nach Öffnungszeiten</li>
+                            <li>Erkundigen Sie sich nach bestimmten Gerichten</li>
+                            <li>Fragen Sie nach vegetarischen/veganen Optionen</li>
+                            <li>Stellen Sie Fragen zu Allergenen</li>
+                            <li>Versuchen Sie, eine Reservierung vorzunehmen</li>
+                            <li>Stellen Sie komplexere Fragen wie "Was empfehlen Sie für ein romantisches Dinner?"</li>
+                        </ul>
+                    </li>
+                    <li>Notieren Sie sich, bei welchen Fragen der MCP-Server gut oder weniger gut antwortet</li>
+                    <li>Kehren Sie zur Konfiguration zurück und verbessern Sie die Wissensbasis und Trainingsbeispiele basierend auf Ihren Tests</li>
+                    <li>Wiederholen Sie den Test nach jeder Anpassung</li>
+                </ol>
+            </div>
+            
+            <div class="tutorial-tip">
+                <i class="fas fa-lightbulb"></i>
+                <p>Tipp: Testen Sie auch "Edge Cases" – ungewöhnliche oder unerwartete Fragen, um zu sehen, wie der MCP-Server reagiert. Dies hilft Ihnen, die Robustheit zu verbessern.</p>
+            </div>
+            
+            <div class="sample-content">
+                <h5>Beispiel für einen Testdialog:</h5>
+                <div class="chat-simulation">
+                    <div class="chat-message user">
+                        <div class="message-content">Hallo, ich würde gerne wissen, ob ich bei Ihnen auch nach 22 Uhr noch essen kann?</div>
+                    </div>
+                    <div class="chat-message bot">
+                        <div class="message-content">Guten Tag! Unsere Küche ist von Montag bis Samstag bis 22:30 Uhr geöffnet. Letzte Bestellungen für Speisen nehmen wir um 22:00 Uhr an, die Bar bleibt jedoch bis Mitternacht geöffnet. Haben Sie vor, später am Abend zu uns zu kommen?</div>
+                    </div>
+                    <div class="chat-message user">
+                        <div class="message-content">Ja, wir wären wahrscheinlich gegen 21:45 Uhr da. Können wir einen Tisch für 4 Personen reservieren?</div>
+                    </div>
+                    <div class="chat-message bot">
+                        <div class="message-content">Selbstverständlich können Sie für 21:45 Uhr einen Tisch für 4 Personen reservieren. Ich benötige dafür nur einige Informationen. Möchten Sie gleich eine Reservierung vornehmen?</div>
+                    </div>
+                    <div class="chat-message user">
+                        <div class="message-content">Ja, bitte.</div>
+                    </div>
+                    <div class="chat-message bot">
+                        <div class="message-content">Gerne! Bitte füllen Sie das folgende Formular aus, um Ihre Reservierung vorzunehmen:</div>
+                    </div>
+                    <div class="form-simulation">
+                        [Reservierungsformular wird angezeigt]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tutorial-step">
+        <div class="step-header">
+            <div class="step-number">6</div>
+            <h4>Integration in eine Website (optional)</h4>
+        </div>
+        <div class="step-content">
+            <p>Wenn Sie möchten, können Sie Ihren MCP-Server in eine Website integrieren, um zu sehen, wie er in einer realen Umgebung funktionieren würde.</p>
+            
+            <div class="step-instructions">
+                <ol>
+                    <li>Navigieren Sie zum Bereich "Deploy" oder "Bereitstellen"</li>
+                    <li>Wählen Sie "Website Integration" oder "Website-Integration"</li>
+                    <li>Passen Sie das Erscheinungsbild des Chat-Widgets an (Farben, Position, Begrüßungsnachricht)</li>
+                    <li>Kopieren Sie den generierten Code-Schnipsel</li>
+                    <li>Wenn Sie eine eigene Website haben, können Sie den Code in Ihre Website einbinden</li>
+                    <li>Alternativ können Sie eine kostenlose Test-Seite auf Plattformen wie Glitch oder GitHub Pages erstellen und den Code dort einbinden</li>
+                </ol>
+            </div>
+            
+            <div class="tutorial-note">
+                <i class="fas fa-info-circle"></i>
+                <p>Hinweis: Für diese Übung ist die Website-Integration optional. Sie können den MCP-Server auch direkt über die Testumgebung von Smithery.ai nutzen und testen.</p>
+            </div>
+            
+            <div class="sample-content">
+                <h5>Beispiel für einen Integrationscode:</h5>
+                <div class="code-box">
+                    <pre><code>&lt;!-- Smithery.ai Chat Widget --&gt;
+&lt;script type="text/javascript"&gt;
+    (function(s,m,i,t,h,e,r,y){
+        s['SmitheryObject']=h;s[h]=s[h]||function(){(s[h].q=s[h].q||[]).push(arguments)};
+        s[h].l=1*new Date();e=m.createElement(i);r=m.getElementsByTagName(i)[0];
+        e.async=1;e.src=t;r.parentNode.insertBefore(e,r);
+    })(window,document,'script','https://app.smithery.ai/widget.js','smithery');
+    
+    smithery('init', 'YOUR_BOT_ID_HERE', { 
+        position: 'right',
+        primaryColor: '#01A4BC',
+        greeting: 'Hallo! Wie kann ich Ihnen heute helfen?'
+    });
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tutorial-completion">
+    <div class="completion-icon">
+        <i class="fas fa-check-circle"></i>
+    </div>
+    <h4>Herzlichen Glückwunsch!</h4>
+    <p>Sie haben erfolgreich einen einfachen MCP-Server für ein Restaurant erstellt und getestet. Dieser kann nun Reservierungen annehmen, Fragen zur Speisekarte beantworten und Informationen zum Restaurant bereitstellen.</p>
+    
+    <div class="next-steps">
+        <h5>Mögliche nächste Schritte:</h5>
+        <ul>
+            <li>Erweitern Sie die Wissensbasis mit mehr Inhalten und Trainingsbeispielen</li>
+            <li>Fügen Sie weitere Funktionen hinzu, z.B. Menü-Empfehlungen oder Sonderangebote</li>
+            <li>Integrieren Sie den MCP-Server mit einem echten Reservierungssystem</li>
+            <li>Testen Sie den MCP-Server mit Freunden oder Kollegen, um weiteres Feedback zu sammeln</li>
+        </ul>
+    </div>
+</div>
+
+<div class="tutorial-resources">
+    <h4>Zusätzliche Ressourcen:</h4>
+    <div class="resources-grid">
+        <a href="#" class="resource-card">
+            <i class="fas fa-file-pdf"></i>
+            <h5>PDF-Leitfaden</h5>
+            <p>Ausführliche Anleitung zum Herunterladen</p>
+        </a>
+        <a href="#" class="resource-card">
+            <i class="fas fa-video"></i>
+            <h5>Video-Tutorial</h5>
+            <p>Schritt-für-Schritt-Videoanleitung</p>
+        </a>
+        <a href="#" class="resource-card">
+            <i class="fas fa-code"></i>
+            <h5>Erweitertes Template</h5>
+            <p>Vorkonfigurierte erweiterte Vorlage</p>
+        </a>
+        <a href="#" class="resource-card">
+            <i class="fas fa-question-circle"></i>
+            <h5>Support-Forum</h5>
+            <p>Hilfe bei Problemen und Fragen</p>
+        </a>
+    </div>
+</div>
+
+<style>
+.tutorial-intro {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.intro-item {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.intro-item i {
+    font-size: 1.5rem;
+    color: #01A4BC;
+    margin-bottom: 0.5rem;
+}
+
+.intro-item h4 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.intro-item p {
+    margin: 0;
+}
+
+.tutorial-goal {
+    background: #f0f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #01A4BC;
+}
+
+.tutorial-overview {
+    margin-bottom: 2rem;
+}
+
+.steps-overview {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1.5rem 3rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.steps-overview li {
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-steps {
+    margin-bottom: 2rem;
+}
+
+.tutorial-step {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-header {
+    background: linear-gradient(135deg, #01A4BC, #0189A1);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.step-number {
+    background: white;
+    color: #01A4BC;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.step-content {
+    padding: 1.5rem;
+}
+
+.step-instructions ol, .step-instructions ul {
+    padding-left: 1.5rem;
+}
+
+.step-instructions li {
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-note, .tutorial-tip {
+    display: flex;
+    align-items: flex-start;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.tutorial-note i, .tutorial-tip i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #01A4BC;
+}
+
+.tutorial-note p, .tutorial-tip p {
+    margin: 0;
+}
+
+.step-screenshot {
+    margin: 1.5rem 0;
+}
+
+.step-screenshot img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.sample-content {
+    margin: 1.5rem 0;
+}
+
+.content-box, .code-box {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.code-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.chat-simulation {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.chat-message.user .message-content {
+    background: #e1f5fe;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message.bot .message-content {
+    background: #f5f5f5;
+    border-bottom-left-radius: 4px;
+}
+
+.form-simulation {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.tutorial-completion {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.completion-icon {
+    font-size: 3rem;
+    color: #01A4BC;
+    margin-bottom: 1rem;
+}
+
+.next-steps {
+    text-align: left;
+    background: #f0f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.tutorial-resources {
+    margin-bottom: 2rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card i {
+    font-size: 2rem;
+    color: #01A4BC;
+    margin-bottom: 1rem;
+}
+
+.resource-card h5 {
+    margin: 0.5rem 0;
+}
+
+.resource-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .intro-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
